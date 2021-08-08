@@ -3,6 +3,11 @@ class Api::V1::NotificationsController < ApplicationController
   # which sets the @notifications instance variable to the notification record with the params :id
   before_action :find_notification, only: [:show]
 
+  # two separate ways to access all a users notifications
+    # get request to /api/v1/messages/?id=:id
+    # get request to /api/v1/users/:id
+      #serialized user data containing all notifications
+
   def index
     # sets the notification instance variable to an array of all notifications
     @notifications = Notification.all
@@ -29,10 +34,5 @@ class Api::V1::NotificationsController < ApplicationController
     # if no records exists raises an ActiveRecord::RecordNotFound
     @notification = Notification.find(params[:id])
   end
-
-  # need a special route to return just 1 users notifications
-  # /api/v1/users/1
-    # have this return serialized json data with notifications
-  # /api/v1/notifications/?user=:id
 
 end
