@@ -21,7 +21,18 @@ class Api::V1::UsersController < ApplicationController
 
   def notifications
     @notifications = User.find(params[:id]).notifications
+    # if there are no notifications then returns an empty array
+    # then verify if the array is empty on the frontend
     render json: @notifications, status: :ok
+
+    # status: :no_content overrides the empty array and sends nothing
+    # not quite how I want to have info on the front end
+    # if @notifications.empty?
+    #   render json: @notifications, status: :ok
+    # else
+    #   render json: @notifications, status: :ok
+    # end
+
   end
 
   private
