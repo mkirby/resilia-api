@@ -19,6 +19,11 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def notifications
+    @notifications = User.find(params[:id]).notifications
+    render json: @notifications, status: :ok
+  end
+
   private
 
   def find_user
