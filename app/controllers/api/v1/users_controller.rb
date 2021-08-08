@@ -25,7 +25,7 @@ class Api::V1::UsersController < ApplicationController
     # pulls the param :id out of the request
     # .find returns the object by :id
     # if no records exists raises an ActiveRecord::RecordNotFound
-    # which causes @user.valid? to return false, I think? 
+
     # verify if the status 404 happens in find_user or show else - it might just fail here
     @user = User.find(params[:id])
   end
