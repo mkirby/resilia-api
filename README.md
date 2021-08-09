@@ -11,7 +11,7 @@ A simple react notification viewer that populates a dropdown with all users. Whe
 - Create the postgresql server and populate it with data
   - `rails db:create`
   - `rails db:migrate`
-  - `rails db:seed` (_seed data in progress_)
+  - `rails db:seed`
 - Start the server by running `rails s`.
   Clone down and open the React resilia-notification-viewer Frontend
 - Run `npm install`
