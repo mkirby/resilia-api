@@ -1,24 +1,37 @@
-# README
+# Resilia Notification Viewer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple react notification viewer that populates a dropdown with all users. When a user is selected, that's users notifications are rendered below.
 
-Things you may want to cover:
+### Ruby on Rails Backend: [ Repo](https://github.com/mkirby/resilia-api)
 
-* Ruby version
+### React Frontend: [ Repo](https://github.com/mkirby/resilia-notification-viewer)
 
-* System dependencies
+- Clone down and open the Ruby on Rails resilia-api backend repo
+- Run `bundle install`
+- Create the postgresql server and populate it with data
+  - `rails db:create`
+  - `rails db:migrate`
+  - `rails db:seed` (_seed data in progress_)
+- Start the server by running `rails s`.
+  Clone down and open the React resilia-notification-viewer Frontend
+- Run `npm install`
+- Run `npm start`
 
-* Configuration
+### Technologies
 
-* Database creation
+- [React](https://github.com/facebook/react)
+- [React Redux](https://github.com/reduxjs/react-redux)
+- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
 
-* Database initialization
+### Requirements
 
-* How to run the test suite
+- ruby '2.6.4'
+- gem "active_model_serializers", "~> 0.10.12"
 
-* Services (job queues, cache servers, search engines, etc.)
+### Prompt Requirements
 
-* Deployment instructions
-
-* ...
+- frontend should request notifications from an API
+- notifications should be housed in a persistent store
+- persistent store that can survive the API server restarting
+- notification objects contain arbitrary domain data along with attributes that allow it to
+- function as a “notification” a user is intended to receive
